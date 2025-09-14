@@ -19,13 +19,14 @@ const Header = ({ activeSection, setActiveSection }) => {
     setIsDownloading(true)
     
     // Create a direct download link to the resume in public folder
+    
     const link = document.createElement('a')
-    link.href = '/resume/resume.pdf'
+    link.href = `${import.meta.env.BASE_URL}resume/resume.pdf`
     link.download = 'Dheeneshwaran_G_FullStack_Developer.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
-    
+s
     // Show success message after a short delay
     setTimeout(() => {
       alert('Resume downloaded successfully! Check your downloads folder.')
@@ -53,19 +54,12 @@ const Header = ({ activeSection, setActiveSection }) => {
               </li>
             ))}
             <li>
-              <a 
-                href="/resume/resume.pdf"
-                className={`resume-link ${isDownloading ? 'downloading' : ''}`} 
-                onClick={(e) => {
-                  e.preventDefault()
-                  handleResumeDownload()
-                }}
-                download="Dheeneshwaran_G_FullStack_Developer.pdf"
-              >
-                {isDownloading ? 'Downloading...' : 'Resume'}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path fillRule="evenodd" d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" clipRule="evenodd" />
-                </svg>
+              <a
+              className={`resume-link ${isDownloading ? 'downloading' : ''}`}
+              onClick={handleResumeDownload}
+              disabled={isDownloading}
+            >
+              {isDownloading ? 'Downloading...' : 'Resume'}
               </a>
             </li>
           </ul>
