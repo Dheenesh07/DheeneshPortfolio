@@ -1,0 +1,115 @@
+.skills {
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.05) 0%, rgba(255, 101, 132, 0.05) 100%);
+  padding: 100px 0;
+  position: relative;
+}
+
+.skills .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.skill-category {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.skill-category h3 {
+  color: #6c63ff;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.3rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.skill-category h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(135deg, #6c63ff, #ff6584);
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skill-item {
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #2d2b55;
+}
+
+.skill-level {
+  height: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(135deg, #6c63ff, #ff6584);
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  z-index: 1;
+  background-size: 20px 20px;
+  animation: move 2s linear infinite;
+  border-radius: 4px;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20px 20px;
+  }
+}

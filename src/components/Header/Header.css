@@ -1,0 +1,130 @@
+/* components/Header/Header.css */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d2b55;
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  background: linear-gradient(135deg, #6c63ff, #ff6584);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-right: 5px;
+  font-size: 2rem;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #6c63ff;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #6c63ff;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+.resume-link {
+  background: linear-gradient(135deg, #6c63ff, #ff6584);
+  color: white !important;
+  padding: 8px 20px !important;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.resume-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+}
+
+.resume-link.downloading {
+  background: #2d2b55;
+  opacity: 0.8;
+}
+
+.resume-link::after {
+  display: none;
+}
+
+.resume-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.mobile-menu-btn span {
+  width: 25px;
+  height: 3px;
+  background: #2d2b55;
+  margin: 3px 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+  }
+}

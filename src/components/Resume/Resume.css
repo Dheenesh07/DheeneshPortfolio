@@ -1,0 +1,110 @@
+/* components/Resume/Resume.css */
+.resume-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resume-actions {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.resume {
+  background: white;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #6c63ff;
+  padding-bottom: 20px;
+}
+
+.resume-header h1 {
+  color: #2d2b55;
+  margin-bottom: 5px;
+}
+
+.resume-header h2 {
+  color: #6c63ff;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.resume-section {
+  margin-bottom: 25px;
+}
+
+.resume-section h3 {
+  color: #2d2b55;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.education-item, .project-item {
+  margin-bottom: 15px;
+}
+
+.education-item h4, .project-item h4 {
+  color: #6c63ff;
+  margin-bottom: 5px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill-category {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.skill-category h4 {
+  color: #2d2b55;
+  margin-bottom: 10px;
+}
+
+.skill-category ul {
+  padding-left: 20px;
+}
+
+.skill-category li {
+  margin-bottom: 5px;
+}
+
+/* Print styles */
+@media print {
+  .resume-actions {
+    display: none;
+  }
+  
+  .resume {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .resume-header {
+    border-bottom: 2pt solid #6c63ff;
+  }
+  
+  .resume-section h3 {
+    border-bottom: 1pt solid #eee;
+  }
+}
