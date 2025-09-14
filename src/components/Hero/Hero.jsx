@@ -10,25 +10,21 @@ const Hero = ({ setActiveSection }) => {
     setImageError(true)
   }
 
-  // Function to handle resume download
   const handleResumeDownload = () => {
     setIsDownloading(true)
-    
-    // Create a direct download link to the resume in public folder
+
     const link = document.createElement('a')
-    link.href = '/resume/resume.pdf'
+    link.href = `${import.meta.env.BASE_URL}resume/resume.pdf`
     link.download = 'Dheeneshwaran_G_FullStack_Developer.pdf'
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
-    
-    // Show success message after a short delay
+
     setTimeout(() => {
       alert('Resume downloaded successfully! Check your downloads folder.')
       setIsDownloading(false)
     }, 1000)
   }
-
   return (
     <section id="home" className="hero">
       <div className="hero-content">
@@ -43,8 +39,8 @@ const Hero = ({ setActiveSection }) => {
             <a href="#contact" className="btn btn-secondary" onClick={() => setActiveSection('contact')}>
               Contact Me
             </a>
-            <button 
-              className={`btn btn-resume ${isDownloading ? 'downloading' : ''}`} 
+            <button
+              className={`btn btn-resume ${isDownloading ? 'downloading' : ''}`}
               onClick={handleResumeDownload}
               disabled={isDownloading}
             >
@@ -59,12 +55,13 @@ const Hero = ({ setActiveSection }) => {
                 <span>DG</span>
               </div>
             ) : (
-              <img 
-                src="/images/profile.jpg" 
-                alt="Dheeneshwaran G" 
-                className="profile-photo" 
+              <img
+                src={`${import.meta.env.BASE_URL}images/profile.jpg`}
+                alt="Dheeneshwaran G"
+                className="profile-photo"
                 onError={handleImageError}
               />
+
             )}
             <div className="photo-frame"></div>
           </div>
